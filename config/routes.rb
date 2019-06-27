@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 	get "login" => "login#index"
 	get "user" => "user#index"
 	post "users" => "user#create"
+	get "home/stopwatch" => "user#stopwatch"
 end

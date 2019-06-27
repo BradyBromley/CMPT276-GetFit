@@ -1,5 +1,6 @@
 class UserController < ApplicationController
 	def index
+		@user = User.find(1)
 	end
 	
 	def create
@@ -13,6 +14,10 @@ class UserController < ApplicationController
 		#	flash[:errors] = user.errors.full_messages
 		#	redirect_to "/users"
 		#end
+	end
+
+	def stopwatch
+		@timenow = 0
 	end
 
 end
