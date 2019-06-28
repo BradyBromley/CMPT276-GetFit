@@ -1,23 +1,25 @@
 class UserController < ApplicationController
 	def index
-		@user = User.find(1)
+		
 	end
 	
-	def create
-		#user = User.new
-		#user.First_Name = params[:player][:First_Name]
-		#user.last_name = [:player][:last_name]
+	def new
+	end
 
-		#if player.save
-		#	redirect_to "/login"
-		#else
-		#	flash[:errors] = user.errors.full_messages
-		#	redirect_to "/users"
-		#end
+	def create
+		user = User.new
+		user.First_Name = params[:user][:First_Name]
+		user.last_name = params[:user][:last_name]
+
+		if user.save
+			redirect_to "/home"
+		else
+			flash[:errors] = user.errors.full_messages
+			redirect_to "/user/new"
+		end
 	end
 
 	def stopwatch
-		@timenow = 0
 	end
 
 end
