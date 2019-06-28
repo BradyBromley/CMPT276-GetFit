@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 	def index
-		@user = User.find_by()
+		@user = User.last
 	end
 
 	def todaysplan

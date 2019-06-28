@@ -15,7 +15,7 @@ class UserController < ApplicationController
 			redirect_to "/home"
 		else
 			flash[:errors] = user.errors.full_messages
-			redirect_to "/user/new"
+			redirect_to "/users/new"
 		end
 	end
 
