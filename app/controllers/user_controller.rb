@@ -7,9 +7,7 @@ class UserController < ApplicationController
 	end
 
 	def create
-		user = User.new
-		user.First_Name = params[:user][:First_Name]
-		user.last_name = params[:user][:last_name]
+		user = User.new(user_params)
 
 		if user.save
 			redirect_to "/home"
@@ -22,4 +20,10 @@ class UserController < ApplicationController
 	def stopwatch
 	end
 
+
+private
+        def user_params
+                params.require(:user).permit(:First_Name, :last_name,
+                                       :password, :password_confirmation)
+        end
 end
